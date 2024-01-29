@@ -8,13 +8,13 @@ import (
 	"regexp"
 )
 
-// 全局Validate数据校验实列
+// Validate 全局Validate数据校验实列
 var Validate *validator.Validate
 
-// 全局翻译器
+// Trans 全局翻译器
 var Trans ut.Translator
 
-// 初始化Validator数据校验
+// InitValidate 初始化Validator数据校验
 func InitValidate() {
 	chinese := zh.New()
 	uni := ut.New(chinese, chinese)

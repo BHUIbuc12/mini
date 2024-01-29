@@ -10,7 +10,7 @@ import (
 	"time"
 )
 
-// 全局日志变量
+// Log 全局日志变量
 //var Log *zap.Logger
 var Log *zap.SugaredLogger
 

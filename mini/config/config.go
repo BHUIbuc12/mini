@@ -12,7 +12,7 @@ import (
 // 系统配置，对应yml
 // viper内置了mapstructure, yml文件用"-"区分单词, 转为驼峰方便
 
-// 全局配置变量
+// Conf 全局配置变量
 var Conf = new(config)
 
 type config struct {
@@ -24,8 +24,9 @@ type config struct {
 	RateLimit *RateLimitConfig `mapstructure:"rate-limit" json:"rateLimit"`
 }
 
-// 设置读取配置信息
+// InitConfig 设置读取配置信息
 func InitConfig() {
+	// 获取工作目录，也就是 main.go 所在的目录
 	workDir, err := os.Getwd()
 	if err != nil {
 		panic(fmt.Errorf("读取应用目录失败:%s \n", err))
